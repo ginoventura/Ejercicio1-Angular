@@ -3,16 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormPaginaComponent } from './components/form-pagina/form-pagina.component';
+import { NotificadorService } from './services/notificador.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormPaginaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [NotificadorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

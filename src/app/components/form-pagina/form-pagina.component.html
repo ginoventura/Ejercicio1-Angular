@@ -1,0 +1,27 @@
+<div class="container">
+    <form [formGroup]="form" class="col-12" (ngSubmit)="showData()" invalidate>
+        <div class="row">
+            <div class="col-12 text-left"><b class="text-secondary">Nueva página</b></div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 mb-3">
+                <label for="inombre">Nombre</label>
+                <input type="text" id="inombre" class="form-control" formControlName="nombre"
+                    placeholder="Ingresa tu nombre" value="" maxlength="255">
+                <div class="text-danger" *ngIf="submitted && form.controls['nombre'].errors?.['required']">
+                    Debes informar nombre de la pagina
+                </div>
+                <label for="ilink">Link</label>
+                <input type="text" id="ilink" class="form-control" formControlName="link"
+                    placeholder="Ingresa el link de la pagina" value="" maxlength="255">
+                <div  class="text-danger" *ngIf="submitted && form.controls['link'].errors?.['required']">
+                    Debes informar link de la pagina
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success">Agregar</button>
+            <button type="button" class="btn btn-danger ms-2" (click)="reset()">Limpiar</button>
+        </div>
+    </form>
+</div>
